@@ -1,0 +1,23 @@
+<% include partials/header %>
+<br>
+<h1 class ='text-center'>
+    This is the index page!
+</h1>
+<br>
+<div class='text-center'>
+    <% blogs.forEach(function(blog){ %>
+    <div class = 'img-thumbnail' style ='width: 700px; margin: 0 auto;'>
+        <h1>
+            <%= blog.title %>
+        </h1>
+        <img src="<%= blog.image %>">
+        <p> <%= blog.body.substring(0, 40) %>...</p>
+        <p> Created: <%= blog.date.toDateString() %></p>
+        <a href="/blogs/<%=blog._id%>" class='btn btn-outline-info' style='margin-bottom:20px;'>More Info</a>
+    </div>
+        <br>
+    <%})%>
+</div>
+
+
+<% include partials/footer %>

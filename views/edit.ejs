@@ -1,0 +1,21 @@
+<% include partials/header %>
+
+<div class ='text-center'>
+    <h1>Edit <%= blog.title %></h1>
+</div>
+<div class='text-center'>
+    <form action='/blogs/<%=blog._id%>?_method=PUT' method='POST'>
+        <div>
+            <input class='form-group text-center' style='width:360px;'type="text" name="blog[title]" value='<%=blog.title%>'> 
+        </div>
+        <div >
+            <input class='form-group text-center' type="text" style='width:360px;' name="blog[image]" value='<%=blog.image%>'> 
+        </div>
+        <label for="">Content:</label>
+        <div class='form-group '>
+            <textarea style='width:360px;'name="blog[body]"><%=blog.body%></textarea>
+        </div>
+        <button type='submit' class='btn btn-dark'>Submit!</button>
+    </form>
+</div>
+<% include partials/footer %>

@@ -1,0 +1,24 @@
+<% include partials/header %>
+<div class ='text-center'>
+    <h1>New Post</h1>
+</div>
+<div class='text-center'>
+    <form action='/blogs' method='POST'>
+        <div>
+            <input class='form-group text-center' style='width:360px;'type="text" name="blog[title]" placeholder='Blog Title'> 
+        </div>
+        <div >
+            <input class='form-group text-center' type="text" style='width:360px;' name="blog[image]" placeholder='Image Link'> 
+        </div>
+        <label for="">Content:</label>
+        <div class='form-group '>
+            <textarea style='width:360px;' rows="" cols="" name="blog[body]" ></textarea>
+        </div>
+        <button type='submit' class='btn btn-dark'>Submit!</button>
+    </form>
+</div>
+
+
+
+
+<% include partials/footer %>
