@@ -4,6 +4,9 @@
     <img src="<%= blogs.image %>" alt="">
     <p> <%= blogs.body %> </p>
     <a href="/blogs/<%= blogs._id%>/edit" class='btn btn-outline-primary'>Edit</a>
+    <form action="/blogs/<%= blogs._id%>?_method=DELETE" method="POST">
+        <button class='btn btn-outline-danger'>Delete</button>
+    </form>
 </div>
 
 <% include partials/footer %>

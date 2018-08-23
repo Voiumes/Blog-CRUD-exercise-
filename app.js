@@ -76,6 +76,15 @@ app.put('/blogs/:id', function(req, res){
         }
     })
 })
+app.delete('/blogs/:id', function(req,res){
+    Blog.findByIdAndRemove(req.params.id, function(err, deleted){
+        if(err){
+
+        }else{
+             res.redirect('/blogs');
+        }
+    })
+})
 
 
 
