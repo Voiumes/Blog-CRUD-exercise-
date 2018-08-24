@@ -3,26 +3,13 @@ const express = require('express'),
     methodOverride = require('method-override'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose');
+const Blog = require('./models/blogs');
+
 app.set('view engine', 'ejs')
 mongoose.connect("mongodb://localhost/pup_app");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
-let blogSchema = new mongoose.Schema({
-    title: String,
-    image: String,
-    body: String,
-    date: {
-        type: Date,
-        default: Date.now
-    }
-});
-let Blog = mongoose.model("Blog", blogSchema);
 
-// Blog.create({
-//     title: 'First Blog Post',
-//     image: 'https://bit.ly/2BxyKFb',
-//     body: 'Hi there this is the first blog post hueheuhuhe'
-// })
 app.get('/', function(req, res){
      res.redirect('/blogs');
 })
