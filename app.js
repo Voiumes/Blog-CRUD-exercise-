@@ -10,6 +10,7 @@ mongoose.connect("mongodb://localhost/pup_app");
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride('_method'));
 
+
 app.get('/', function(req, res){
      res.redirect('/blogs');
 })
